@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medumarucha | Sabor Marino</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <style>
+        :root {
+            --bikini-blue: #00a8e8;
+            --bikini-yellow: #ffeb3b;
+            --bikini-pink: #ff91af;
+        }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #0077be;
+            overflow-x: hidden;
+            padding-top: 70px; /* Espacio para el navbar fijo */
+        }
+
+        .title-responsive {
+            font-size: clamp(2rem, 9.5vw, 6.5rem);
+            white-space: nowrap; 
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .sky-background {
+            background-color: #7dd3fc;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(255,255,255,0.4) 0%, transparent 10%),
+                radial-gradient(circle at 80% 10%, rgba(255,255,255,0.3) 0%, transparent 15%),
+                radial-gradient(circle at 50% 80%, rgba(255,255,255,0.4) 0%, transparent 12%);
+            background-attachment: fixed;
+        }
+
+        .bikini-flower {
+            position: absolute;
+            opacity: 0.2;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .font-bikini { font-family: 'Fredoka', cursive; }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 3px solid #000;
+            box-shadow: 8px 8px 0px #000;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-bottom: 3px solid #000;
+        }
+
+        /* Estilos del Carrusel */
+        .swiper {
+            width: 100%;
+            padding-top: 20px;
+            padding-bottom: 50px;
+        }
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 300px;
+            height: auto;
+        }
+        .swiper-pagination-bullet-active {
+            background: #ff91af !important;
+        }
+
+        @media (min-width: 768px) {
+            .float-md {
+                animation: float 4s ease-in-out infinite;
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(2deg); }
+        }
+        .float { animation: float 4s ease-in-out infinite; }
+
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
+</head>
+<body class="sky-background">
+
+    <nav class="fixed top-0 left-0 w-full z-[100] bg-white/90 backdrop-blur-md border-b-4 border-black px-4 py-2">
+        <div class="max-w-7xl mx-auto flex items-center justify-between md:justify-start">
+            <a href="#" class="flex items-center gap-2">
+                <div class="w-10 h-10 md:w-12 md:h-12 bg-slate-200 border-2 border-black rounded-full overflow-hidden flex items-center justify-center">
+                    <img src="img/logomedumarucha.png" alt="Logo" class="w-full h-full object-contain p-0.5">
+                </div>
+            </a>
+
+            <div class="hidden md:flex items-center gap-6 font-bold uppercase text-[12px] tracking-wider ml-8 mr-auto">
+                <a href="#sobre-mi" class="hover:text-pink-500 transition-colors">Sobre Mi</a>
+                <a href="#menu" class="hover:text-pink-500 transition-colors">Productos</a>
+                <a href="https://wa.me/593961671665" target="_blank" class="hover:text-pink-500 transition-colors">Ordenar</a>
+                <a href="#matriz" class="hover:text-pink-500 transition-colors">Matriz</a>
+            </div>
+
+            <a href="https://wa.me/593961671665" target="_blank" class="md:hidden bg-[#25D366] text-white p-2 rounded-lg border-2 border-black">
+                <i class="fa-brands fa-whatsapp text-xl"></i>
+            </a>
+        </div>
+    </nav>
+
+    <a href="https://wa.me/593961671665" target="_blank" class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl border-2 border-white animate-bounce">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <header class="relative h-[65vh] md:h-[75vh] flex items-center justify-center text-white overflow-hidden border-b-8 border-black">
+        <img src="img/foto 1.jpeg" class="absolute inset-0 w-full h-full object-cover" alt="Banner Medumarucha">
+        <div class="absolute inset-0 bg-blue-900/60 backdrop-blur-[2px]"></div>
+        
+        <div class="relative z-10 text-center px-4 w-full flex flex-col items-center">
+            <div class="w-32 h-32 md:w-40 md:h-40 bg-white/95 border-4 border-black rounded-full overflow-hidden flex items-center justify-center mb-4 shadow-[6px_6px_0_#000] float">
+                <img src="img/logomedumarucha.png" alt="Logo Grande Medumarucha" class="w-full h-full object-contain p-2">
+            </div>
+            
+            <h1 class="font-bikini font-bold text-yellow-300 drop-shadow-[0_4px_0_#000] md:drop-shadow-[0_6px_0_#000] title-responsive mb-4">
+                MEDUMARUCHA
+            </h1>
+            
+            <p class="text-base md:text-2xl font-bold italic text-sky-100 drop-shadow-md max-w-[280px] md:max-w-none">
+                La carreta más colorida de la ciudad 🌈
+            </p>
+        </div>
+    </header>
+
+    <div class="bg-black py-4 text-yellow-400 overflow-hidden relative border-b-4 border-yellow-400">
+        <div class="flex whitespace-nowrap animate-[marquee_25s_linear_infinite] font-bikini text-xl uppercase tracking-tighter">
+            <span class="mx-8">🕒 Jueves a Domingo (17:30 - 22:30)</span>
+            <span class="mx-8">📍 Juan Montalvo - ¡Te esperamos!</span>
+            <span class="mx-8">📦 Pedidos: 0961671665</span>
+        </div>
+    </div>
+
+    <div class="w-full bg-cover bg-center bg-no-repeat border-b-4 border-black" style="background-image: url('img/3.jpg');">
+        <section id="sobre-mi" class="relative z-10 py-16 px-6 max-w-4xl mx-auto">
+            <div class="bg-white/65 backdrop-blur-md border-[4px] border-black rounded-[3rem] p-8 md:p-12 flex flex-col md:flex-row items-center gap-10 shadow-[8px_8px_0px_#000]">
+                <div class="w-48 h-48 md:w-56 md:h-56 rounded-full border-4 border-black overflow-hidden bg-slate-100 shrink-0 shadow-lg">
+                    <img src="img/dayana.jpg" alt="Dayana" class="w-full h-full object-cover">
+                </div>
+                <div class="text-center md:text-left">
+                    <h2 class="font-bikini text-4xl text-pink-500 mb-4 drop-shadow-[0_2px_0_#000]">¡Hola, soy Dayana!</h2>
+                    <p class="text-sky-950 leading-relaxed font-bold tracking-wide">
+                        Fundadora de Medumarucha. Cada snack está preparado con la alegría de Fondo de Bikini para que disfrutes de un sabor unique en Juan Montalvo. ¡Gracias por apoyar este proyecto colorido!
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="w-full bg-cover bg-center bg-no-repeat border-b-4 border-black" style="background-image: url('img/2.jpg');">
+        <section id="menu" class="relative z-10 py-16 px-4 max-w-6xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="text-4xl md:text-5xl font-bikini text-slate-900 drop-shadow-sm mb-4">Nuestro Menú</h2>
+                <div class="w-24 h-2 bg-pink-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="glass-card rounded-[2rem] overflow-hidden border-blue-500">
+                            <img src="img/fondo-web-medumarucha.jpg" class="product-image" alt="Vasito">
+                            <div class="p-6">
+                                <div class="flex justify-between items-center mb-2">
+                                    <h3 class="text-2xl font-bikini text-sky-600">Vasito</h3>
+                                    <span class="text-xl font-bold">$1.50</span>
+                                </div>
+                                <p class="text-slate-600 text-sm font-semibold uppercase">Choclo • Mayonesa • Queso • Dorito</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="glass-card rounded-[2rem] overflow-hidden border-purple-600">
+                            <img src="img/fondo-web-medumarucha.jpg" class="product-image" alt="Doriloco">
+                            <div class="p-6">
+                                <div class="flex justify-between items-center mb-2 text-purple-600">
+                                    <h3 class="text-2xl font-bikini">Doriloco</h3>
+                                    <span class="text-xl font-bold text-black">$2.75</span>
+                                </div>
+                                <p class="text-slate-600 text-sm font-semibold uppercase">Snack a tu elección • Choclo • Queso • Queso Cheddar •  Carnita Cremosa </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="glass-card rounded-[2rem] overflow-hidden border-yellow-400">
+                            <img src="img/fondo-web-medumarucha.jpg" class="product-image" alt="Maruchan">
+                            <div class="p-6">
+                                <div class="flex justify-between items-center mb-2 text-yellow-600">
+                                    <h3 class="text-2xl font-bikini">Maruchan</h3>
+                                    <span class="text-xl font-bold text-black">$4.75</span>
+                                </div>
+                                <p class="text-slate-700 text-sm font-bold uppercase">Snack a tu elección • Choclo • Queso • Queso Cheddar •  Carnita Cremosa • Maruchan </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="glass-card rounded-[2rem] overflow-hidden border-pink-400">
+                            <img src="img/fondo-web-medumarucha.jpg" class="product-image" alt="Hamburguesa">
+                            <div class="p-6">
+                                <div class="flex justify-between items-center mb-2 text-pink-500">
+                                    <h3 class="text-2xl font-bikini">Hamburguesa de Colores</h3>
+                                    <span class="text-xl font-bold text-black">$5.99</span>
+                            </div>
+                                <p class="text-slate-700 text-sm font-bold uppercase"> Queso • Jamón •Huevo • Tocino • Vegetales • Papas • Cola</p>
+                        </div>
+                    </div>
+                </div>
+
+                    <div class="swiper-slide">
+                        <div class="glass-card rounded-[2rem] overflow-hidden border-red-500">
+                            <img src="img/fondo-web-medumarucha.jpg" class="product-image" alt="Carnívora">
+                            <div class="p-6">
+                                <div class="flex justify-between items-center mb-2 text-red-600">
+                                    <h3 class="text-2xl font-bikini">Carnívora</h3>
+                                    <span class="text-xl font-bold text-black">$6.00</span>
+                                </div>
+                                <p class="text-slate-600 text-sm font-semibold uppercase">2 Snacks a tu elección •  • Choclo-Mayonesa • Maruchan • Queso • Queso Cheddar • Carnita Cremosa •  Maruchan-Elote</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- BLOQUE 3: SUCURSALES (INTERACTIVAS) Y OPINIONES -->
+    <div class="w-full bg-cover bg-center bg-no-repeat border-b-4 border-black" style="background-image: url('img/1.webp');">
+        <section id="matriz" class="bg-black/40 text-white py-16 px-6 relative z-10">
+            
+            <!-- CONTROLES UX DE PESTAÑAS -->
+            <div class="max-w-6xl mx-auto text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bikini text-yellow-300 uppercase drop-shadow-[0_2px_0_#000] mb-4">Tenemos 2 sucursales en Fondo de Bikini</h2>
+                <p class="text-slate-200 font-semibold mb-6">Selecciona una sucursal para ver su mapa y horarios de atención</p>
+                
+                <div class="flex justify-center gap-4">
+                    <button id="btn-matriz" onclick="cambiarSucursal('matriz')" class="px-6 py-3 font-bikini uppercase text-base md:text-lg bg-yellow-400 text-black border-4 border-black translate-y-[4px] transition-all focus:outline-none rounded-2xl cursor-pointer">
+                        📍 Sucursal Matriz - Norte 
+                    </button>
+                    <button id="btn-sucursal2" onclick="cambiarSucursal('sucursal2')" class="px-6 py-3 font-bikini uppercase text-base md:text-lg bg-slate-800 text-white border-4 border-black shadow-[4px_4px_0px_#000] hover:bg-slate-700 transition-all focus:outline-none rounded-2xl cursor-pointer">
+                        📍 Nueva Sucursal - Sur
+                    </button>
+                </div>
+            </div>
+
+            <!-- CONTENIDO DINÁMICO DE SUCURSALES -->
+            <div class="max-w-6xl mx-auto min-h-[400px]">
+                
+                <!-- SUCURSAL 1: MATRIZ -->
+                <div id="info-matriz" class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16 transition-all duration-300">
+                    <div>
+                        <h3 class="text-3xl font-bikini text-pink-400 mb-6 uppercase">Sucursal Matriz - Norte</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-sky-500 rounded-2xl flex items-center justify-center border-2 border-white shadow-lg shrink-0">
+                                    <i class="fa-solid fa-map-location-dot text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold">Dirección Exacta</p>
+                                    <p class="text-slate-300">Juan Montalvo, Diagonal al Colegio Mundo América</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-pink-500 rounded-2xl flex items-center justify-center border-2 border-white shadow-lg shrink-0">
+                                    <i class="fa-solid fa-clock text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold">Horario</p>
+                                    <p class="text-slate-300">Jueves a Domingo: 17:30 - 22:30</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rounded-[3rem] overflow-hidden border-8 border-yellow-400 shadow-2xl h-80 md:h-96">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.872714241031!2d-79.8893976!3d-2.1645084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMsKwMDknNTIuMiJTIDc5wrA1MycyMS44Ilc!5e0!3m2!1ses!2sec!4v1685800000000!5m2!1ses!2sec" 
+                        class="w-full h-full grayscale-[0.2]" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+                <!-- SUCURSAL 2: NUEVA SUCURSAL (Oculta al inicio) -->
+                <div id="info-sucursal2" class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16 hidden transition-all duration-300">
+                    <div>
+                        <h3 class="text-3xl font-bikini text-pink-400 mb-6 uppercase">Nueva Sucursal</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-purple-500 rounded-2xl flex items-center justify-center border-2 border-white shadow-lg shrink-0">
+                                    <i class="fa-solid fa-map-location-dot text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold">Dirección Exacta</p>
+                                    <p class="text-slate-300">19 y San Martín</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-lime-500 rounded-2xl flex items-center justify-center border-2 border-white shadow-lg shrink-0">
+                                    <i class="fa-solid fa-clock text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold">Horario</p>
+                                    <p class="text-slate-300">Jueves a Domingo: 17:30 - 22:30</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rounded-[3rem] overflow-hidden border-8 border-pink-400 shadow-2xl h-80 md:h-96">
+                        <!-- ¡Recuerda cambiar este enlace iframe src por el de tu nueva ubicación! -->
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.872714241031!2d-79.8893976!3d-2.1645084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMsKwMDknNTIuMiJTIDc5wrA1MycyMS44Ilc!5e0!3m2!1ses!2sec!4v1685800000000!5m2!1ses!2sec" 
+                        class="w-full h-full grayscale-[0.2]" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- SECCIÓN OPINIONES -->
+            <div id="opiniones" class="max-w-4xl mx-auto pt-8 border-t-2 border-slate-800">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bikini text-white drop-shadow-[0_2px_0_#000]">¿Qué dicen los Clientes?</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="glass-card rounded-2xl p-5 text-sm text-black">
+                        <div class="flex text-yellow-400 mb-2">⭐⭐⭐⭐⭐•</div>
+                        <p class="text-slate-700 italic font-semibold">"Vivo en duran y gracias a un amigo pude probar 100/10 🔥🙌❤️"</p>
+                        <span class="block text-xs font-bold text-pink-500 mt-3">— crx.cori</span>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5 text-sm text-black">
+                        <div class="flex text-yellow-400 mb-2">⭐⭐⭐⭐⭐•</div>
+                        <p class="text-slate-700 italic font-semibold">"Full apoyoopo 🔥❤️"</p>
+                        <span class="block text-xs font-bold text-pink-500 mt-3">— luis._.sani</span>
+                    </div>
+                    <div class="glass-card rounded-2xl p-5 text-sm text-black">
+                        <div class="flex text-yellow-400 mb-2">⭐⭐⭐⭐⭐•</div>
+                        <p class="text-slate-700 italic font-semibold">"Pasa pa acá un plato 🔥"</p>
+                        <span class="block text-xs font-bold text-pink-500 mt-3">— thalwss_</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer id="pagos" class="relative min-h-[250px] bg-slate-900 text-white flex flex-col justify-center items-center py-12 px-4 overflow-hidden z-10 w-full">
+        <div class="relative w-full max-w-sm mx-auto text-center flex flex-col items-center justify-center">
+            
+            <div class="flex justify-center items-center gap-4 mb-6">
+                <a href="https://www.instagram.com/medumarucha" target="_blank" class="w-12 h-12 bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] text-white rounded-full flex items-center justify-center text-xl shadow-md border-2 border-white hover:scale-110 transition-transform">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://www.tiktok.com/@medu_marucha" target="_blank" class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center text-xl shadow-md border-2 border-white hover:scale-110 transition-transform">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+            </div>
+
+            <div class="mt-4 text-slate-400">
+                <h4 class="font-bikini text-xl mb-1 uppercase tracking-wider text-yellow-400 drop-shadow-[0_2px_0_#000]">Medumarucha</h4>
+                <p class="text-[11px] font-bold text-slate-300">Juan Montalvo, Guayaquil • © 2026</p>
+                
+                <p class="text-[9px] text-slate-500 tracking-wider mt-6 uppercase font-sans">
+                    Designed & Engineered by 
+                    <a href="https://JEnriqueCaicedo.dev" target="_blank" class="text-pink-400 hover:text-pink-300 underline transition-colors font-semibold">
+                        Juan Enrique Caicedo
+                    </a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            coverflowEffect: {
+                rotate: 20,
+                stretch: 0,
+                depth: 150,
+                modifier: 1,
+                slideShadows: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+        });
+
+        function copyToClipboard(text, btn) {
+            navigator.clipboard.writeText(text).then(() => {
+                const icon = btn.querySelector('i');
+                const originalColor = btn.style.backgroundColor;
+                
+                icon.classList.replace('fa-copy', 'fa-check');
+                btn.style.backgroundColor = '#22c55e';
+                
+                setTimeout(() => {
+                    icon.classList.replace('fa-check', 'fa-copy');
+                    btn.style.backgroundColor = originalColor;
+                }, 1500);
+            });
+        }
+
+        // LÓGICA DE INTERCAMBIO DE PESTAÑAS (SUCURSALES)
+        function cambiarSucursal(sucursal) {
+            const infoMatriz = document.getElementById('info-matriz');
+            const infoSucursal2 = document.getElementById('info-sucursal2');
+            const btnMatriz = document.getElementById('btn-matriz');
+            const btnSucursal2 = document.getElementById('btn-sucursal2');
+
+            if (sucursal === 'matriz') {
+                infoMatriz.classList.remove('hidden');
+                infoSucursal2.classList.add('hidden');
+                
+                // Botón Matriz Activo (Efecto presionado sin sombra externa)
+                btnMatriz.className = "px-6 py-3 font-bikini uppercase text-base md:text-lg bg-yellow-400 text-black border-4 border-black translate-y-[4px] transition-all focus:outline-none rounded-2xl cursor-pointer";
+                // Botón Nueva Sucursal Inactivo
+                btnSucursal2.className = "px-6 py-3 font-bikini uppercase text-base md:text-lg bg-slate-800 text-white border-4 border-black shadow-[4px_4px_0px_#000] hover:bg-slate-700 transition-all focus:outline-none rounded-2xl cursor-pointer";
+            } else {
+                infoMatriz.classList.add('hidden');
+                infoSucursal2.classList.remove('hidden');
+                
+                // Botón Nueva Sucursal Activo (Estilo Rosa Presionado)
+                btnSucursal2.className = "px-6 py-3 font-bikini uppercase text-base md:text-lg bg-pink-500 text-white border-4 border-black translate-y-[4px] transition-all focus:outline-none rounded-2xl cursor-pointer";
+                // Botón Matriz Inactivo
+                btnMatriz.className = "px-6 py-3 font-bikini uppercase text-base md:text-lg bg-slate-800 text-white border-4 border-black shadow-[4px_4px_0px_#000] hover:bg-slate-700 transition-all focus:outline-none rounded-2xl cursor-pointer";
+            }
+        }
+    </script>
+</body>
+</html>
