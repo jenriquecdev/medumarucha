@@ -8,11 +8,11 @@
     <meta name="description" content="Medumarucha: Snacks, Dorilocos, Maruchan preparada y hamburguesas temáticas en Guayaquil. Pide directo al Norte o al Sur por WhatsApp.">
     <meta name="theme-color" content="#00a8e8">
 
-    <!-- Favicon (Ícono en la pestaña del navegador) -->
+    <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="img/logomedumarucha_1.jpeg">
     <link rel="apple-touch-icon" href="img/logomedumarucha_1.jpeg">
 
-    <!-- Open Graph / WhatsApp, Telegram & Redes Sociales (URLs Absolutas) -->
+    <!-- Open Graph / WhatsApp Preview -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://jenriquecdev.github.io/medumarucha/">
     <meta property="og:title" content="Medumarucha | Snacks & Comida Rápida Marina">
@@ -29,7 +29,7 @@
     <meta name="twitter:description" content="El auténtico sabor de Fondo de Bikini en Guayaquil. Pide directo al Norte o al Sur por WhatsApp.">
     <meta name="twitter:image" content="https://jenriquecdev.github.io/medumarucha/img/foto%201.jpeg">
 
-    <!-- Preconexión y Preload de Fuentes Críticas (Evita FOUT / CLS) -->
+    <!-- Preconexión de Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap">
@@ -39,7 +39,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-    <!-- CSS NATIVO DE ALTO RENDIMIENTO (100/100 Mobile + Desktop) -->
+    <!-- CSS NATIVO -->
     <style>
         :root {
             --sky-bg: #7dd3fc;
@@ -90,7 +90,6 @@
 
         .font-bikini { font-family: var(--font-display); }
 
-        /* Contenedores */
         .container {
             width: 100%;
             max-width: 1280px;
@@ -102,14 +101,12 @@
         .container-sm { max-width: 896px; }
         .container-md { max-width: 1024px; }
 
-        /* Tipografía */
         .title-responsive {
             font-size: clamp(2.2rem, 8vw, 5rem);
             line-height: 1.05;
             letter-spacing: -0.02em;
         }
 
-        /* Estilo Neo-Brutalista */
         .glass-card {
             background: rgba(255, 255, 255, 0.98);
             border: 3px solid var(--brand-black);
@@ -164,7 +161,6 @@
             }
         }
 
-        /* Navbar Dinámica Inteligente */
         .site-navbar {
             position: fixed;
             top: 0;
@@ -258,7 +254,6 @@
             }
         }
 
-        /* Botón flotante móvil (optimizado Touch Target >= 52px) */
         .btn-floating-wa {
             position: fixed;
             bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
@@ -291,7 +286,6 @@
             }
         }
 
-        /* Botones de sedes */
         .tab-btn {
             min-height: 44px;
             padding: 0.65rem 1.2rem;
@@ -317,7 +311,6 @@
         .tab-active-sur { background-color: var(--brand-pink); color: #ffffff; }
         .tab-inactive { background-color: #1e293b; color: #ffffff; }
 
-        /* Estados reactivos del selector de sede en tarjetas */
         .btn-order-norte, .btn-order-sur {
             min-height: 42px;
             width: 100%;
@@ -342,10 +335,8 @@
             box-shadow: 1px 1px 0px var(--brand-black);
         }
 
-        /* Contraste accesible */
         .contrast-wa-norte { color: #064e3b; font-size: 0.95rem; }
 
-        /* Slider Swiper */
         .swiper { 
             width: 100%; 
             padding-top: 15px; 
@@ -392,7 +383,6 @@
         .swiper-pagination-bullet { background: var(--brand-black) !important; opacity: 0.3; transition: all 0.3s ease; }
         .swiper-pagination-bullet-active { background: var(--brand-pink) !important; opacity: 1; width: 28px !important; border-radius: 9999px !important; }
 
-        /* Tarjeta de producto & Touch layout */
         .product-card-body {
             padding: 1.15rem;
             display: flex;
@@ -413,7 +403,6 @@
             }
         }
 
-        /* Animaciones */
         @keyframes float {
             0%, 100% { transform: translateY(0) rotate(0deg); }
             50% { transform: translateY(-8px) rotate(1.5deg); }
@@ -427,7 +416,6 @@
         .animate-marquee { display: flex; width: 200%; animation: marquee 28s linear infinite; }
         .animate-marquee:hover { animation-play-state: paused; }
 
-        /* Utilidades Generales */
         .hidden { display: none !important; }
         .flex { display: flex; }
         .flex-col { flex-direction: column; }
@@ -458,7 +446,7 @@
 </head>
 <body class="sede-activa-matriz">
 
-    <!-- NAVBAR ACCESIBLE CON AUTO-HIDE EN SCROLL MÓVIL -->
+    <!-- NAVBAR ACCESIBLE -->
     <nav class="site-navbar" id="site-navbar" aria-label="Navegación principal">
         <div class="container nav-inner">
             <a href="#" class="nav-brand" aria-label="Ir al inicio de Medumarucha">
@@ -496,7 +484,7 @@
         </div>
     </nav>
 
-    <!-- BOTÓN FLOTANTE DINÁMICO ERGONÓMICO -->
+    <!-- BOTÓN FLOTANTE DINÁMICO -->
     <a href="https://wa.me/593961671665?text=¡Hola!%20Vengo%20de%20la%20web%20y%20quiero%20hacer%20un%20pedido" 
        id="btn-whatsapp-flotante" 
        target="_blank" 
@@ -589,7 +577,7 @@
             
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper" id="menu-items-wrapper">
-                        <!-- Render dinámico accesible -->
+                        <!-- Generado dinámicamente -->
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
@@ -774,9 +762,6 @@
         const WHATSAPP_NORTE = "593961671665";
         const WHATSAPP_SUR = "593987654321";
 
-        // Placeholder SVG temático inline para fallback limpio sin romper la estética
-        const DEFAULT_IMG = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="310" height="190" viewBox="0 0 310 190"><rect width="100%" height="100%" fill="%2338bdf8"/><circle cx="155" cy="95" r="45" fill="%23facc15" stroke="%23000" stroke-width="4"/><text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-size="34">🍔</text></svg>`;
-
         const MENU_DATA = [
             { name: "Vasito", price: "$1.50", desc: "Choclo tierno, mayonesa casera, queso y lluvia de Doritos.", img: "img/fondo-web-medumarucha.jpg", color: "#0369a1" },
             { name: "Doriloco", price: "$2.75", desc: "Snack a tu elección, choclo, queso cheddar derretido y carnita cremosa.", img: "img/fondo-web-medumarucha.jpg", color: "#7e22ce" },
@@ -804,10 +789,9 @@
                                  class="product-image" 
                                  alt="${item.name}" 
                                  width="310" 
-                                 height="190" 
+                                 height="180" 
                                  loading="lazy" 
-                                 decoding="async"
-                                 onerror="this.onerror=null; this.src='${DEFAULT_IMG}';">
+                                 decoding="async">
                             <div class="product-card-body">
                                 <div>
                                     <div class="flex items-center justify-between gap-2" style="margin-bottom: 0.4rem;">
@@ -836,7 +820,7 @@
 
         renderMenu();
 
-        // Inicialización de Swiper optimizado para móvil y desktop
+        // Inicialización de Swiper
         const swiper = new Swiper(".mySwiper", {
             grabCursor: true,
             centeredSlides: true,
