@@ -7,10 +7,27 @@
     
     <meta name="description" content="Medumarucha: Snacks, Dorilocos, Maruchan preparada y hamburguesas temáticas en Guayaquil. Pide directo al Norte o al Sur por WhatsApp.">
     <meta name="theme-color" content="#00a8e8">
+
+    <!-- Favicon (Ícono en la pestaña del navegador) -->
+    <link rel="icon" type="image/jpeg" href="img/logomedumarucha_1.jpeg">
+    <link rel="apple-touch-icon" href="img/logomedumarucha_1.jpeg">
+
+    <!-- Open Graph / WhatsApp, Telegram & Redes Sociales (URLs Absolutas) -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Medumarucha | Sabor Marino">
-    <meta property="og:description" content="Pide tus snacks favoritos al Norte (Juan Montalvo) o al Sur (19 y San Martín).">
-    <meta property="og:image" content="img/foto 1.jpeg">
+    <meta property="og:url" content="https://jenriquecdev.github.io/medumarucha/">
+    <meta property="og:title" content="Medumarucha | Snacks & Comida Rápida Marina">
+    <meta property="og:description" content="El auténtico sabor de Fondo de Bikini en Guayaquil. Pide tus snacks, dorilocos y hamburguesas al Norte o al Sur por WhatsApp.">
+    <meta property="og:image" content="https://jenriquecdev.github.io/medumarucha/img/foto%201.jpeg">
+    <meta property="og:image:secure_url" content="https://jenriquecdev.github.io/medumarucha/img/foto%201.jpeg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Medumarucha | Snacks & Comida Rápida Marina">
+    <meta name="twitter:description" content="El auténtico sabor de Fondo de Bikini en Guayaquil. Pide directo al Norte o al Sur por WhatsApp.">
+    <meta name="twitter:image" content="https://jenriquecdev.github.io/medumarucha/img/foto%201.jpeg">
 
     <!-- Preconexión y Preload de Fuentes Críticas (Evita FOUT / CLS) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -201,6 +218,24 @@
             }
         }
 
+        .nav-brand-title {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            text-transform: uppercase;
+            color: var(--brand-yellow);
+            text-shadow: 2px 2px 0px #000;
+            -webkit-text-stroke: 1px #000;
+            line-height: 1;
+        }
+        @media (min-width: 768px) {
+            .nav-brand-title {
+                font-size: 1.45rem;
+                text-shadow: 2.5px 2.5px 0px #000;
+            }
+        }
+
         .nav-link {
             text-decoration: none;
             color: #1e293b;
@@ -284,7 +319,7 @@
 
         /* Estados reactivos del selector de sede en tarjetas */
         .btn-order-norte, .btn-order-sur {
-            min-height: 42px; /* Cumple estándar táctil móvil */
+            min-height: 42px;
             width: 100%;
             transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
         }
@@ -310,7 +345,7 @@
         /* Contraste accesible */
         .contrast-wa-norte { color: #064e3b; font-size: 0.95rem; }
 
-        /* Slider Swiper Móvil Fluido */
+        /* Slider Swiper */
         .swiper { 
             width: 100%; 
             padding-top: 15px; 
@@ -357,7 +392,7 @@
         .swiper-pagination-bullet { background: var(--brand-black) !important; opacity: 0.3; transition: all 0.3s ease; }
         .swiper-pagination-bullet-active { background: var(--brand-pink) !important; opacity: 1; width: 28px !important; border-radius: 9999px !important; }
 
-        /* Tarjeta de producto & Touch layout para botones */
+        /* Tarjeta de producto & Touch layout */
         .product-card-body {
             padding: 1.15rem;
             display: flex;
@@ -419,27 +454,6 @@
             .lg\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             .lg\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
         }
-
-        .nav-brand-title {
-    font-family: var(--font-display);
-    font-size: 1.25rem;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    text-transform: uppercase;
-    color: var(--brand-yellow);
-    /* Sombra neo-brutalista sólida igual a la del hero */
-    text-shadow: 2px 2px 0px #000;
-    /* Delineado negro para resaltar sobre el fondo blanco del nav */
-    -webkit-text-stroke: 1px #000;
-    line-height: 1;
-}
-
-@media (min-width: 768px) {
-    .nav-brand-title {
-        font-size: 1.45rem;
-        text-shadow: 2.5px 2.5px 0px #000;
-    }
-}
     </style>
 </head>
 <body class="sede-activa-matriz">
@@ -447,13 +461,13 @@
     <!-- NAVBAR ACCESIBLE CON AUTO-HIDE EN SCROLL MÓVIL -->
     <nav class="site-navbar" id="site-navbar" aria-label="Navegación principal">
         <div class="container nav-inner">
+            <a href="#" class="nav-brand" aria-label="Ir al inicio de Medumarucha">
+                <div class="nav-logo-wrap">
+                    <img src="img/logomedumarucha_1.jpeg" alt="Logotipo Medumarucha" width="44" height="44" style="width: 100%; height: 100%; object-fit: cover; display: block;" fetchpriority="high">
+                </div>
+                <span class="nav-brand-title">MEDUMARUCHA</span>
+            </a>
 
-        <a href="#" class="nav-brand" aria-label="Ir al inicio de Medumarucha">
-            <div class="nav-logo-wrap">
-                <img src="img/logomedumarucha_1.jpeg" alt="Logotipo Medumarucha" width="44" height="44" style="width: 100%; height: 100%; object-fit: cover; display: block;" fetchpriority="high">
-            </div>
-            <span class="nav-brand-title">MEDUMARUCHA</span>
-        </a>
             <div class="hidden md:flex items-center gap-8" style="font-weight: 700; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.05em;">
                 <a href="#sobre-mi" class="nav-link">Sobre Mí</a>
                 <a href="#menu" class="nav-link">Menú</a>
@@ -496,10 +510,6 @@
     <header style="position: relative; min-height: 70vh; display: flex; align-items: center; justify-content: center; color: white; overflow: hidden; border-bottom: 4px solid #000;">
         <img src="img/foto 1.jpeg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;" alt="Carreta Medumarucha con hamburguesas y snacks marinos" width="1920" height="1080" fetchpriority="high">
         <div style="position: absolute; inset: 0; background-color: rgba(15, 23, 42, 0.72); backdrop-filter: blur(2px);"></div>
-        
-        
-        
-        
         
         <div class="container container-sm text-center flex flex-col items-center" style="position: relative; z-index: 10; padding-top: 3rem; padding-bottom: 3rem;">
             <div class="float-banner" style="width: 125px; height: 125px; border-radius: 50%; border: 4px solid #000; overflow: hidden; margin-bottom: 1.25rem; box-shadow: 5px 5px 0px #000; flex-shrink: 0; aspect-ratio: 1/1; background-color: #38bdf8;">
@@ -765,7 +775,7 @@
         const WHATSAPP_SUR = "593987654321";
 
         // Placeholder SVG temático inline para fallback limpio sin romper la estética
-      //const DEFAULT_IMG = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="310" height="190" viewBox="0 0 310 190"><rect width="100%" height="100%" fill="%2338bdf8"/><circle cx="155" cy="95" r="45" fill="%23facc15" stroke="%23000" stroke-width="4"/><text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-size="34"></text></svg>`;-->
+        const DEFAULT_IMG = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="310" height="190" viewBox="0 0 310 190"><rect width="100%" height="100%" fill="%2338bdf8"/><circle cx="155" cy="95" r="45" fill="%23facc15" stroke="%23000" stroke-width="4"/><text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-size="34">🍔</text></svg>`;
 
         const MENU_DATA = [
             { name: "Vasito", price: "$1.50", desc: "Choclo tierno, mayonesa casera, queso y lluvia de Doritos.", img: "img/fondo-web-medumarucha.jpg", color: "#0369a1" },
