@@ -123,20 +123,52 @@
                 <a href="#sobre-mi" class="hover:text-pink-500 transition-colors">Sobre Mi</a>
                 <a href="#promociones" class="hover:text-pink-500 transition-colors">Promos</a>
                 <a href="#menu" class="hover:text-pink-500 transition-colors">Productos</a>
-                <a href="https://wa.me/593960126847" target="_blank" class="hover:text-pink-500 transition-colors">Ordenar</a>
+                
+                <!-- Desplegable Ordenar Web -->
+                <div class="relative group">
+                    <button class="hover:text-pink-500 transition-colors flex items-center gap-1 font-bold uppercase cursor-pointer">
+                        Ordenar <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                    </button>
+                    <div class="absolute left-0 top-full hidden group-hover:flex flex-col bg-white border-2 border-black rounded-xl p-2 shadow-[4px_4px_0px_#000] w-44 z-50">
+                        <a href="https://wa.me/593985039481?text=Hola%20Medumarucha,%20deseo%20hacer%20un%20pedido%20para%20la%20Sucursal%20Norte" target="_blank" class="px-3 py-2 text-xs hover:bg-yellow-100 rounded-lg text-black font-bikini">
+                            📍 Sucursal Norte
+                        </a>
+                        <a href="https://wa.me/593960126847?text=Hola%20Medumarucha,%20deseo%20hacer%20un%20pedido%20para%20la%20Sucursal%20Sur" target="_blank" class="px-3 py-2 text-xs hover:bg-pink-100 rounded-lg text-pink-600 font-bikini">
+                            📍 Sucursal Sur
+                        </a>
+                    </div>
+                </div>
+
                 <a href="#matriz" class="hover:text-pink-500 transition-colors">Sucursales</a>
             </div>
 
-            <a href="https://wa.me/593960126847" target="_blank" class="md:hidden bg-[#25D366] text-white p-2 rounded-lg border-2 border-black">
+            <!-- Botón WhatsApp Móvil en Navbar -->
+            <button onclick="toggleModalWhatsapp()" class="md:hidden bg-[#25D366] text-white p-2 rounded-lg border-2 border-black active:scale-95 transition-transform cursor-pointer" aria-label="Seleccionar Sucursal WhatsApp">
                 <i class="fa-brands fa-whatsapp text-xl"></i>
-            </a>
+            </button>
         </div>
     </nav>
 
-    <!-- BOTÓN FLOTANTE WHATSAPP CON ID ASIGNADO -->
-    <a href="https://wa.me/593960126847" id="btn-whatsapp-flotante" target="_blank" class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl border-2 border-white animate-bounce">
-        <i class="fa-brands fa-whatsapp text-3xl"></i>
-    </a>
+    <!-- BOTÓN FLOTANTE WHATSAPP CON SELECTOR DE SUCURSAL -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+        <!-- Menú emergente de sucursales -->
+        <div id="menu-flotante-wa" class="hidden mb-3 bg-white border-3 border-black rounded-2xl p-3 shadow-[6px_6px_0px_#000] w-52 flex-col gap-2">
+            <p class="font-bikini text-xs uppercase text-slate-800 text-center font-bold pb-1 border-b-2 border-slate-200">
+                ¿A qué sucursal pides?
+            </p>
+            <a href="https://wa.me/593985039481?text=Hola%20Medumarucha,%20deseo%20ordenar%20para%20la%20Sucursal%20Norte" target="_blank" class="flex items-center justify-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-black px-3 py-2 rounded-xl border-2 border-black font-bikini text-xs shadow-[2px_2px_0_#000] active:scale-95 transition-all">
+                <span>📍 Sucursal Norte</span>
+            </a>
+            <a href="https://wa.me/593960126847?text=Hola%20Medumarucha,%20deseo%20ordenar%20para%20la%20Sucursal%20Sur" target="_blank" class="flex items-center justify-center gap-2 bg-pink-500 hover:bg-pink-400 text-white px-3 py-2 rounded-xl border-2 border-black font-bikini text-xs shadow-[2px_2px_0_#000] active:scale-95 transition-all">
+                <span>📍 Sucursal Sur</span>
+            </a>
+        </div>
+
+        <!-- Botón circular principal -->
+        <button onclick="toggleModalWhatsapp()" class="bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl border-2 border-white animate-bounce focus:outline-none cursor-pointer" aria-label="Abrir selector WhatsApp">
+            <i class="fa-brands fa-whatsapp text-3xl"></i>
+        </button>
+    </div>
 
     <!-- HERO SECTION -->
     <header class="relative h-[65vh] md:h-[75vh] flex items-center justify-center text-white overflow-hidden border-b-8 border-black">
@@ -164,7 +196,8 @@
             <span class="mx-8">🕒 Jueves a Domingo (17:30 - 22:30)</span>
             <span class="mx-8">📍 MATRIZ: Juan Montalvo - ¡Te esperamos!</span>
             <span class="mx-8">📍 SUCURSAL SUR: 19 Y San Martín ¡Te esperamos!</span>
-            <span class="mx-8">📦 Pedidos: 0960126847</span>
+            <span class="mx-8">📦 Pedidos Norte: 0985039481</span>
+            <span class="mx-8">📦 Pedidos Sur: 0960126847</span>
         </div>
     </div>
 
@@ -221,7 +254,7 @@
                     <div class="p-5 pt-0 space-y-2">
                         <p class="text-[11px] font-bold text-center uppercase tracking-wider text-slate-800">Pedir por WhatsApp:</p>
                         <div class="grid grid-cols-2 gap-2">
-                            <a href="https://wa.me/593960126847?text=Hola%20Medumarucha,%20deseo%20ordenar%20el%20Combo%20Duo%20Cangreburguer%20para%20la%20Sucursal%20Norte" target="_blank" class="bg-yellow-400 hover:bg-yellow-300 text-black font-bikini text-xs py-2 px-2 rounded-xl border-2 border-black text-center shadow-[2px_2px_0_#000] active:scale-95 transition-all">
+                            <a href="https://wa.me/593985039481?text=Hola%20Medumarucha,%20deseo%20ordenar%20el%20Combo%20Duo%20Cangreburguer%20para%20la%20Sucursal%20Norte" target="_blank" class="bg-yellow-400 hover:bg-yellow-300 text-black font-bikini text-xs py-2 px-2 rounded-xl border-2 border-black text-center shadow-[2px_2px_0_#000] active:scale-95 transition-all">
                                 📍 Norte
                             </a>
                             <a href="https://wa.me/593960126847?text=Hola%20Medumarucha,%20deseo%20ordenar%20el%20Combo%20Duo%20Cangreburguer%20para%20la%20Sucursal%20Sur" target="_blank" class="bg-pink-500 hover:bg-pink-400 text-white font-bikini text-xs py-2 px-2 rounded-xl border-2 border-black text-center shadow-[2px_2px_0_#000] active:scale-95 transition-all">
@@ -250,7 +283,7 @@
                     <div class="p-5 pt-0 space-y-2">
                         <p class="text-[11px] font-bold text-center uppercase tracking-wider text-slate-800">Pedir por WhatsApp:</p>
                         <div class="grid grid-cols-2 gap-2">
-                            <a href="https://wa.me/593960126847?text=Hola%20Medumarucha,%20deseo%20ordenar%20el%20Combo%20Fondo%20de%20Bikini%20para%20la%20Sucursal%20Norte" target="_blank" class="bg-yellow-400 hover:bg-yellow-300 text-black font-bikini text-xs py-2 px-2 rounded-xl border-2 border-black text-center shadow-[2px_2px_0_#000] active:scale-95 transition-all">
+                            <a href="https://wa.me/593985039481?text=Hola%20Medumarucha,%20deseo%20ordenar%20el%20Combo%20Fondo%20de%20Bikini%20para%20la%20Sucursal%20Norte" target="_blank" class="bg-yellow-400 hover:bg-yellow-300 text-black font-bikini text-xs py-2 px-2 rounded-xl border-2 border-black text-center shadow-[2px_2px_0_#000] active:scale-95 transition-all">
                                 📍 Norte
                             </a>
                             <a href="https://wa.me/593960126847?text=Hola%20Medumarucha,%20deseo%20ordenar%20el%20Combo%20Fondo%20de%20Bikini%20para%20la%20Sucursal%20Sur" target="_blank" class="bg-pink-500 hover:bg-pink-400 text-white font-bikini text-xs py-2 px-2 rounded-xl border-2 border-black text-center shadow-[2px_2px_0_#000] active:scale-95 transition-all">
@@ -281,7 +314,7 @@
                     <div class="p-5 pt-0 space-y-2">
                         <p class="text-[11px] font-bold text-center uppercase tracking-wider text-slate-800">Pedir por WhatsApp:</p>
                         <div class="grid grid-cols-2 gap-2">
-                            <a href="https://wa.me/593960126847?text=Hola%20Medumarucha,%20deseo%20ordenar%20el%20Combo%20Medusa%20para%20la%20Sucursal%20Norte" target="_blank" class="bg-yellow-400 hover:bg-yellow-300 text-black font-bikini text-xs py-2 px-2 rounded-xl border-2 border-black text-center shadow-[2px_2px_0_#000] active:scale-95 transition-all">
+                            <a href="https://wa.me/593985039481?text=Hola%20Medumarucha,%20deseo%20ordenar%20el%20Combo%20Medusa%20para%20la%20Sucursal%20Norte" target="_blank" class="bg-yellow-400 hover:bg-yellow-300 text-black font-bikini text-xs py-2 px-2 rounded-xl border-2 border-black text-center shadow-[2px_2px_0_#000] active:scale-95 transition-all">
                                 📍 Norte
                             </a>
                             <a href="https://wa.me/593960126847?text=Hola%20Medumarucha,%20deseo%20ordenar%20el%20Combo%20Medusa%20para%20la%20Sucursal%20Sur" target="_blank" class="bg-pink-500 hover:bg-pink-400 text-white font-bikini text-xs py-2 px-2 rounded-xl border-2 border-black text-center shadow-[2px_2px_0_#000] active:scale-95 transition-all">
@@ -312,7 +345,7 @@
                     <div class="p-5 pt-0 space-y-2">
                         <p class="text-[11px] font-bold text-center uppercase tracking-wider text-slate-800">Pedir por WhatsApp:</p>
                         <div class="grid grid-cols-2 gap-2">
-                            <a href="https://wa.me/593960126847?text=Hola%20Medumarucha,%20deseo%20ordenar%20el%20Combo%20Familiar%20Crustaceo%20Cascarudo%20para%20la%20Sucursal%20Norte" target="_blank" class="bg-yellow-400 hover:bg-yellow-300 text-black font-bikini text-xs py-2 px-2 rounded-xl border-2 border-black text-center shadow-[2px_2px_0_#000] active:scale-95 transition-all">
+                            <a href="https://wa.me/593985039481?text=Hola%20Medumarucha,%20deseo%20ordenar%20el%20Combo%20Familiar%20Crustaceo%20Cascarudo%20para%20la%20Sucursal%20Norte" target="_blank" class="bg-yellow-400 hover:bg-yellow-300 text-black font-bikini text-xs py-2 px-2 rounded-xl border-2 border-black text-center shadow-[2px_2px_0_#000] active:scale-95 transition-all">
                                 📍 Norte
                             </a>
                             <a href="https://wa.me/593960126847?text=Hola%20Medumarucha,%20deseo%20ordenar%20el%20Combo%20Familiar%20Crustaceo%20Cascarudo%20para%20la%20Sucursal%20Sur" target="_blank" class="bg-pink-500 hover:bg-pink-400 text-white font-bikini text-xs py-2 px-2 rounded-xl border-2 border-black text-center shadow-[2px_2px_0_#000] active:scale-95 transition-all">
@@ -697,14 +730,10 @@
             const infoSucursal2 = document.getElementById('info-sucursal2');
             const btnMatriz = document.getElementById('btn-matriz');
             const btnSucursal2 = document.getElementById('btn-sucursal2');
-            const btnWhatsappFlotante = document.getElementById('btn-whatsapp-flotante');
 
             if (sucursal === 'matriz') {
                 infoMatriz.classList.remove('hidden');
                 infoSucursal2.classList.add('hidden');
-                
-                // Enlace al WhatsApp de la Matriz (Norte)
-                btnWhatsappFlotante.href = "https://wa.me/593960126847";
                 
                 btnMatriz.className = "px-6 py-3 font-bikini uppercase text-base md:text-lg bg-yellow-400 text-black border-4 border-black translate-y-[4px] transition-all focus:outline-none rounded-2xl cursor-pointer";
                 btnSucursal2.className = "px-6 py-3 font-bikini uppercase text-base md:text-lg bg-slate-800 text-white border-4 border-black shadow-[4px_4px_0px_#000] hover:bg-slate-700 transition-all focus:outline-none rounded-2xl cursor-pointer";
@@ -712,11 +741,20 @@
                 infoMatriz.classList.add('hidden');
                 infoSucursal2.classList.remove('hidden');
                 
-                // Enlace al WhatsApp de la Sucursal Sur
-                btnWhatsappFlotante.href = "https://wa.me/593960126847";
-                
                 btnSucursal2.className = "px-6 py-3 font-bikini uppercase text-base md:text-lg bg-pink-500 text-white border-4 border-black translate-y-[4px] transition-all focus:outline-none rounded-2xl cursor-pointer";
                 btnMatriz.className = "px-6 py-3 font-bikini uppercase text-base md:text-lg bg-slate-800 text-white border-4 border-black shadow-[4px_4px_0px_#000] hover:bg-slate-700 transition-all focus:outline-none rounded-2xl cursor-pointer";
+            }
+        }
+
+        // TOGGLE PARA EL MENÚ FLOTANTE Y MÓVIL DE WHATSAPP
+        function toggleModalWhatsapp() {
+            const menuWA = document.getElementById('menu-flotante-wa');
+            if (menuWA.classList.contains('hidden')) {
+                menuWA.classList.remove('hidden');
+                menuWA.classList.add('flex');
+            } else {
+                menuWA.classList.add('hidden');
+                menuWA.classList.remove('flex');
             }
         }
     </script>
